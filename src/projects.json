@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Default",
+    "todos": [
+      {
+        "title": "Do the dishes",
+        "description": "Sample todo",
+        "dueDate": "2026-03-28",
+        "priority": 3
+      },
+      {
+        "title": "Finish the todos project",
+        "description": "Finish this project",
+        "dueDate": "2026-03-29",
+        "priority": 2
+      },
+      {
+        "title": "Add proceedings and results",
+        "description": "Finish this project",
+        "dueDate": "2026-03-29",
+        "priority": 5
+      }
+    ]
+  }
+]

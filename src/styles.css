@@ -3,3 +3,19 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 15px;
+}
+
+#projects {
+  background-color: rgb(131, 199, 255);
+  padding: 16px;
+}
+
+#notes {
+  padding: 16px;
+}
