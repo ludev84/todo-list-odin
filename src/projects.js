@@ -1,10 +1,10 @@
 import data from './data.json' assert { type: 'json' };
 
 class Project {
-  constructor(name) {
+  constructor(name, todos = []) {
     this.name = name;
     this.id = crypto.randomUUID();
-    this.todos = [];
+    this.todos = todos;
   }
 }
 
@@ -18,20 +18,20 @@ class Todo {
   }
 }
 
-class Projects {
+class Library {
   constructor() {
     this.projects = []
 
     // Read initial data from data.json
     for (const project of data) {
-      const {name, id} = project;
+      const name = project.name;
       const todos = []
       for (const todo of project.todos) {
-        const {title, id, description, dueDate, priority} = todo
-        const newTodo = new Todo(title, id, description, dueDate, priority)
+        const {title, description, dueDate, priority} = todo
+        const newTodo = new Todo(title, description, dueDate, priority)
         todos.push(newTodo)
       }
-      const newProject = new Project(name, id, todos)
+      const newProject = new Project(name, todos)
       this.projects.push(newProject)
     }
   }
@@ -52,22 +52,7 @@ class Projects {
   }
 }
 
-class Controller {
-  constructor() {
-    this.library = new Projects()
-  }
-
-  // getProjectsNotes(id) {
-  //   const index = this.projects.findIndex((project) => project.id === id);
-  //   return this.projects[index].todos;
-  // }
-}
-
-// const controller = new Controller()
-// controller.addProject("Nuevo projecto")
-// console.log(controller.getProjects())
-
-const projects = new Projects()
+const projects = new Library()
 projects.addProject("lala")
 projects.addTodo(projects.getProjects()[1].id, "titulo", "desc", "2026-03-29", 4)
 console.log(projects.getProjects())
