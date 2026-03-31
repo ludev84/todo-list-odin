@@ -18,7 +18,7 @@ class Todo {
   }
 }
 
-class Library {
+export default class Library {
   constructor() {
     this.projects = []
 
@@ -51,8 +51,3 @@ class Library {
     return this.projects;
   }
 }
-
-const projects = new Library()
-projects.addProject("lala")
-projects.addTodo(projects.getProjects()[1].id, "titulo", "desc", "2026-03-29", 4)
-console.log(projects.getProjects())
