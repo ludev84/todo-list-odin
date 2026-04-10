@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
 .container {
   height: 100vh;
   display: grid;
@@ -12,7 +16,7 @@
 }
 
 #projects {
-  background-color: rgb(131, 199, 255);
+  background-color: #0094cf;
   padding: 16px;
 }
 
@@ -24,6 +28,21 @@ ul {
     list-style-type: none;
 }
 
-.project-selected {
-  font-weight: bold;
+h1 {
+  margin-bottom: 1rem;
+}
+
+/* Projects */
+
+a {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+.selected {
+  font-weight: 600;
+}
+.selected::before {
+  content: "> ";
 }
