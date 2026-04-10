@@ -46,6 +46,16 @@ export default class Library {
     this.projects.push(newProject);
   }
 
+  deleteProject(id) {
+    this.projects.splice(this.projects.findIndex(project => project.id === id), 1)
+  }
+
+  deleteTodo(idProject, idTodo) {
+    const indexProject = this.projects.findIndex((project) => project.id === idProject);
+    const indexTodo = this.projects[index].todos.findIndex((todo) => todo.id === idTodo)
+    this.projects[indexProject].todos.splice(this.projects[indexProject].todos.findIndex(todo => todo.id === idTodo), 1)
+  }
+
   addTodo(id, title, description, dueDate=new Date(), priority=3, completed=false) {
     const index = this.projects.findIndex((project) => project.id === id);
     const newTodo = new Todo(title, description, dueDate, priority, completed)
